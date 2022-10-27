@@ -1,4 +1,7 @@
-nginx:
+version: '3'
+services:
+
+  nginx:
     image: nginx:latest
     ports:
         - '80:80'
@@ -10,7 +13,7 @@ nginx:
         - wordpress
     restart: always
 
-mysql:
+  mysql:
     image: mariadb
     ports:
         - '3306:3306'
@@ -20,7 +23,7 @@ mysql:
         - MYSQL_ROOT_PASSWORD=Strong password
     restart: always
 
-wordpress:
+  wordpress:
 
     image: wordpress:4.7.1-php7.0-fpm
     ports:
